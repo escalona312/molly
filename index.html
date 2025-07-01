@@ -3,179 +3,315 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>nailsbymolly</title>
+  <title>Nails by Molly</title>
+  <meta name="description" content="Reserva tu manicure, gel o uñas acrílicas con Nails by Molly. Diseños únicos, productos premium y atención personalizada. ¡Agenda tu hora online!">
   <link rel="stylesheet" href="css/estilos.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero {
+      background: linear-gradient(90deg, #f8e1f4 60%, #fff 100%);
+      padding: 60px 0 40px 0;
+      text-align: center;
+    }
+    .hero img {
+      max-width: 220px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      color: #d63384;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .btn-cta {
+      background: #d63384;
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      transition: background 0.2s;
+    }
+    .btn-cta:hover { background: #b0256a; }
+    .testimonios {
+      background: #f8e1f4;
+      padding: 40px 0;
+    }
+    .testimonio-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 30px 0 10px 0;
+      text-align: center;
+    }
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .galeria-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    /* Cartas de servicios: mismas dimensiones y imagen más grande */
+    .producto-card {
+      min-height: 480px;
+      max-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
 
+    .producto-card .card-img-top {
+      height: 280px;         /* Ajusta este valor para que sea cuadrada según el ancho de tu card */
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 1/1;     /* Esto fuerza la imagen a ser cuadrada en navegadores modernos */
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <h1>nailsbylamolly</h1>
-  </header>
-
-  <!-- Carrusel automático -->
-  <div class="galeria">
-    <div class="carrusel-inner">
-      <div class="elemento">
-        <img src="img/img1.heic" alt="Imagen 1">
-      </div>
-      <div class="elemento">
-        <img src="img/img2.heic" alt="Imagen 2">
-      </div>
-      <div class="elemento">
-        <img src="img/img3.heic" alt="Imagen 3">
-      </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="#">Nails by Molly</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#razones">Beneficios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="#productos">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reserva">Reserva</a></li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <div class="contenido">
-    <img src="img/image.png" alt="Imagen principal">
-    <div class="contenido-texto">
-      <p>Descubre los mejores diseños personalizados para tus uñas. Agenda tu hora con Nails by Molly y resalta tu estilo único.</p>
-      <p>Ofrecemos una amplia gama de servicios: manicure clásica, uñas acrílicas, gel polish, nail art personalizado y mucho más.</p>
-      
+<!-- Hero principal -->
+<section class="hero" id="hero">
+  <img src="img/image.png" alt="Nails by Molly - Uñas destacadas">
+  <h1>¡Resalta tu estilo con Nails by Molly!</h1>
+  <p>Manicure, gel, acrílicas y diseños personalizados. Atención profesional y productos premium.<br>
+  Reserva tu hora y luce unas uñas únicas.</p>
+  <a href="#reserva" class="btn btn-cta">Reserva tu hora</a>
+</section>
 
-
-      <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Reserva aqui!
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Reserva tu hora</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="reservaForm">
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" required>
-          </div>
-          <div class="mb-3">
-            <label for="servicio" class="form-label">Servicio</label>
-            <select class="form-select" id="servicio" required>
-              <option value="">Selecciona un servicio</option>
-              <option value="manicure">Manicure Clásica</option>
-              <option value="gel">Gel Polish + Diseño</option>
-              <option value="acrilicas">Uñas Acrílicas</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="fecha" class="form-label">Fecha</label>
-            <input type="date" class="form-control" id="fecha" required>
-          </div>
-          <div class="mb-3">
-            <label for="hora" class="form-label">Hora</label>
-            <select class="form-select" id="hora" required>
-              <option value="">Selecciona una hora</option>
-              <option>11:00 am</option>
-              <option>12:00 pm</option>
-              <option>1:00 pm</option>
-              <option>2:00 pm</option>
-              <option>3:00 pm</option>
-              <option>4:00 pm</option>
-              <option>5:00 pm</option>
-              <option>6:00 pm</option>
-              <option>7:00 pm</option>
-              <option>8:00 pm</option>
-            </select>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Reservar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-
-  <div class="razones">
-    <h2>¿Por qué elegir Nails by Molly?</h2>
-    <div class="razones-grid">
-      <div class="carta">
+<!-- Beneficios -->
+<section class="container my-5" id="razones">
+  <h2 class="mb-4 text-center">¿Por qué elegir Nails by Molly?</h2>
+  <div class="row text-center">
+    <div class="col-md-4 mb-3">
+      <div class="carta p-4 h-100">
         <h3>✨ Diseños Únicos</h3>
-        <p>Cada diseño es personalizado según tu estilo y personalidad. No hay dos iguales.</p>
+        <p>Cada diseño es personalizado según tu estilo y personalidad. ¡No hay dos iguales!</p>
       </div>
-      <div class="carta">
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="carta p-4 h-100">
         <h3>💅 Productos Premium</h3>
-        <p>Utilizamos solo productos de la más alta calidad para garantizar durabilidad y belleza.</p>
+        <p>Solo usamos productos de la más alta calidad para garantizar durabilidad y belleza.</p>
       </div>
-      <div class="carta">
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="carta p-4 h-100">
         <h3>🕐 Horarios Flexibles</h3>
         <p>Nos adaptamos a tu agenda. Citas disponibles de lunes a sábado.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="precios">
-    <h2>Precios que te van a encantar</h2>
-    <div class="precios-grid">
-      <div class="precio">
-        <h3>Manicure Clásica</h3>
-        <p>$15.000</p>
+<!-- Galería visual -->
+<section class="container my-5" id="galeria">
+  <h2 class="mb-4 text-center">Galería de trabajos</h2>
+  <div class="galeria-grid">
+    <img src="img/img1.heic" alt="Trabajo 1">
+    <img src="img/img2.heic" alt="Trabajo 2">
+    <img src="img/img3.heic" alt="Trabajo 3">
+    <img src="img/img4.heic" alt="Trabajo 4">
+    <img src="img/img5.heic" alt="Trabajo 5">
+    <img src="img/img6.heic" alt="Trabajo 6">
+    <img src="img/img7.heic" alt="Trabajo 7">
+    <!-- Agrega más imágenes si tienes -->
+</section>
+
+<!-- Servicios / Productos -->
+<section class="container my-5" id="productos">
+  <h2 class="mb-4 text-center">Nuestros Servicios</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100 producto-card">
+        <img src="img/img1.heic" class="card-img-top" alt="Manicure Clásica">
+        <div class="card-body">
+          <h5 class="card-title">Manicure Clásica</h5>
+          <p class="card-text">Luce unas manos impecables con nuestro servicio de manicure tradicional.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">$15.000</small>
+        </div>
       </div>
-      <div class="precio">
-        <h3>Gel Polish + Diseño</h3>
-        <p>$25.000</p>
+    </div>
+    <div class="col">
+      <div class="card h-100 producto-card">
+        <img src="img/img2.heic" class="card-img-top" alt="Gel Polish + Diseño">
+        <div class="card-body">
+          <h5 class="card-title">Gel Polish + Diseño</h5>
+          <p class="card-text">Colores vibrantes y diseños personalizados para destacar tu estilo.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">$25.000</small>
+        </div>
       </div>
-      <div class="precio">
-        <h3>Uñas Acrílicas</h3>
-        <p>$35.000</p>
+    </div>
+    <div class="col">
+      <div class="card h-100 producto-card">
+        <img src="img/img3.heic" class="card-img-top" alt="Uñas Acrílicas">
+        <div class="card-body">
+          <h5 class="card-title">Uñas Acrílicas</h5>
+          <p class="card-text">Extensiones resistentes y elegantes para una apariencia espectacular.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">$35.000</small>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
+<!-- Testimonios (opcional, puedes quitar si no tienes) -->
+<section class="testimonios">
+  <div class="container">
+    <h2 class="mb-4 text-center">Lo que dicen nuestras clientas</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="testimonio-card">
+          <p>"¡Me encantaron mis uñas! El diseño fue justo como lo pedí y duraron semanas."</p>
+          <strong>- Camila R.</strong>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonio-card">
+          <p>"Excelente atención y productos de calidad. 100% recomendada."</p>
+          <strong>- Valentina S.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-  <!-- Agrega esto antes de </body> -->
+<!-- Reserva -->
+<section class="container my-5" id="reserva">
+  <h2 class="mb-4 text-center">Reserva tu hora</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <form id="reservaForm" class="p-4 border rounded bg-light shadow-sm">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="servicio" class="form-label">Servicio</label>
+          <select class="form-select" id="servicio" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="manicure">Manicure Clásica</option>
+            <option value="gel">Gel Polish + Diseño</option>
+            <option value="acrilicas">Uñas Acrílicas</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha</label>
+          <input type="date" class="form-control" id="fecha" required>
+        </div>
+        <div class="mb-3">
+          <label for="hora" class="form-label">Hora</label>
+          <select class="form-select" id="hora" required>
+            <option value="">Selecciona una hora</option>
+            <option>11:00 am</option>
+            <option>12:00 pm</option>
+            <option>1:00 pm</option>
+            <option>2:00 pm</option>
+            <option>3:00 pm</option>
+            <option>4:00 pm</option>
+            <option>5:00 pm</option>
+            <option>6:00 pm</option>
+            <option>7:00 pm</option>
+            <option>8:00 pm</option>
+          </select>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-cta">Reservar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Síguenos en Instagram: <a href="https://instagram.com/" target="_blank" style="color:#fff;text-decoration:underline;">@nailsbymolly</a></p>
+    <p>Contacto: nailsbymolly@email.com</p>
+    <p>&copy; 2024 Nails by Molly. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
 (function(){
-  emailjs.init("_hji8vMQYys3fJCCQ"); // Reemplaza con tu User ID de EmailJS
+  emailjs.init("_hji8vMQYys3fJCCQ");
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Bloquear domingos
+  // Bloquear domingos y horas pasadas
   const fechaInput = document.getElementById('fecha');
   const horaSelect = document.getElementById('hora');
-
   function actualizarHorasDisponibles() {
     const hoy = new Date();
-    const fechaSeleccionada = new Date(fechaInput.value);
     const opciones = horaSelect.querySelectorAll('option');
-
     opciones.forEach(option => {
-      option.disabled = false; // Habilita todas por defecto
-      if (!option.value) return; // Salta la opción "Selecciona una hora"
-      if (
-        fechaInput.value === hoy.toISOString().slice(0, 10) // Si es hoy
-      ) {
-        // Convierte la hora del option a formato 24h
-        let [hora, minutos, ampm] = option.textContent.match(/(\d+):(\d+)\s*(am|pm)/i) || [];
-        if (!hora) return;
+      option.disabled = false;
+      if (!option.value) return;
+      if (fechaInput.value === hoy.toISOString().slice(0, 10)) {
+        let match = option.textContent.match(/(\d+):(\d+)\s*(am|pm)/i);
+        if (!match) return;
+        let [_, hora, minutos, ampm] = match;
         hora = parseInt(hora, 10);
+        minutos = parseInt(minutos, 10);
         if (ampm.toLowerCase() === 'pm' && hora !== 12) hora += 12;
         if (ampm.toLowerCase() === 'am' && hora === 12) hora = 0;
-        const horaActual = hoy.getHours();
-        if (hora <= horaActual) {
+        if (
+          hora < hoy.getHours() ||
+          (hora === hoy.getHours() && minutos <= hoy.getMinutes())
+        ) {
           option.disabled = true;
         }
       }
     });
   }
-
   fechaInput.addEventListener('input', function() {
     const date = new Date(this.value);
     if (date.getDay() === 0) {
@@ -184,17 +320,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     actualizarHorasDisponibles();
   });
-
   horaSelect.addEventListener('focus', actualizarHorasDisponibles);
 
   const form = document.getElementById('reservaForm');
   const submitBtn = form.querySelector('button[type="submit"]');
-
   form.addEventListener('submit', function(e) {
+    const date = new Date(document.getElementById('fecha').value);
+    if (date.getDay() === 0) {
+      alert('No se puede reservar los domingos. Por favor, elige otro día.');
+      return;
+    }
     e.preventDefault();
     submitBtn.disabled = true;
     submitBtn.textContent = "Enviando...";
-
     emailjs.send("service_7x7dwuq", "template_ksuv3i7", {
       nombre: document.getElementById('nombre').value,
       email: document.getElementById('email').value,
