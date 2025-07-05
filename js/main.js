@@ -41,13 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Obtén los valores del formulario
     const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
     const servicio = document.getElementById('servicio').value;
     const fecha = document.getElementById('fecha').value;
     const hora = document.getElementById('hora').value;
 
     // Construye el mensaje para WhatsApp y codifica correctamente
-    const mensaje = `Hola, quiero reservar una hora en Nails by Molly:\nNombre: ${nombre}\nCorreo: ${email}\nServicio: ${servicio}\nFecha: ${fecha}\nHora: ${hora}`;
+    const mensaje = `Hola, quiero reservar una hora en Nails by Molly:\nNombre: ${nombre}\nServicio: ${servicio}\nFecha: ${fecha}\nHora: ${hora}`;
     const numero = "56996361040"; // tu número sin +
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
