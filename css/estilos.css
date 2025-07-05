@@ -79,7 +79,7 @@ footer {
 }
 
 .producto-card .card-img-top {
-  width: 90% !important;
+  width: 100% !important;
   max-height: 220px;
   object-fit: cover;
   margin-bottom: 0.5rem;
@@ -108,8 +108,12 @@ footer {
   }
 
   .producto-card .card-img-top {
+    width: 100% !important;
     height: auto;
-    max-height: 120px;
+    max-height: 250px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border-radius: 1rem;
   }
 
   .card-body {
