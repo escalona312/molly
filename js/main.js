@@ -4,11 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
   const horaSelect = document.getElementById('hora');
   function actualizarHorasDisponibles() {
     const hoy = new Date();
+    const fechaSeleccionada = fechaInput.value ? new Date(fechaInput.value + 'T00:00:00') : null;
     const opciones = horaSelect.querySelectorAll('option');
     opciones.forEach(option => {
       option.disabled = false;
       if (!option.value) return;
-      if (fechaInput.value === hoy.toISOString().slice(0, 10)) {
+      if (
+        fechaSeleccionada &&
+        fechaSeleccionada.getFullYear() === hoy.getFullYear() &&
+        fechaSeleccionada.getMonth() === hoy.getMonth() &&
+        fechaSeleccionada.getDate() === hoy.getDate()
+      ) {
+        // Solo bloquear horas pasadas si la fecha seleccionada es hoy
         let match = option.textContent.match(/(\d+):(\d+)\s*(am|pm)/i);
         if (!match) return;
         let [_, hora, minutos, ampm] = match;
@@ -22,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
         ) {
           option.disabled = true;
         }
+      } else {
+        // Si no es hoy, todas las horas deben estar habilitadas
+        option.disabled = false;
       }
     });
   }
@@ -38,12 +48,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('reservaForm');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-
-    // Obtén los valores del formulario
     const nombre = document.getElementById('nombre').value;
     const servicio = document.getElementById('servicio').value;
     const fecha = document.getElementById('fecha').value;
     const hora = document.getElementById('hora').value;
+    if (!nombre || !servicio || !fecha || !hora) {
+      alert('Por favor, completa todos los campos.');
+      return;
+    }
 
     // Construye el mensaje para WhatsApp y codifica correctamente
     const mensaje = `Hola, quiero reservar una hora en Nails by Molly:\nNombre: ${nombre}\nServicio: ${servicio}\nFecha: ${fecha}\nHora: ${hora}`;
